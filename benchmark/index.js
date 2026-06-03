@@ -10,7 +10,7 @@ import raw from "../src/index.js";
 
 const fixturesPath = path.resolve(import.meta.dirname, "fixtures");
 const fixtures = fs.readdirSync(fixturesPath);
-const suites = [];
+const results = [];
 const libraries = [
 	["front-matter", front],
 	["gray-matter", gray],
@@ -49,25 +49,20 @@ for (const fixture of fixtures) {
 		bench.add(library, () => fn(`${content}${salt++}`));
 	}
 
-	suites.push(bench);
-}
+	await bench.run();
 
-const results = await Promise.all(
-	suites.map(async (suite) => {
-		await suite.run();
-		return {
-			file: suite.name,
-			libraries: suite.tasks.map((task) => ({
-				name: task.name,
-				throughput: {
-					mean: task.result.throughput.mean,
-					rme: task.result.throughput.rme,
-				},
-				samples: task.result.latency.samplesCount,
-			})),
-		};
-	}),
-);
+	results.push({
+		file: bench.name,
+		libraries: bench.tasks.map((task) => ({
+			name: task.name,
+			throughput: {
+				mean: task.result.throughput.mean,
+				rme: task.result.throughput.rme,
+			},
+			samples: task.result.latency.samplesCount,
+		})),
+	});
+}
 
 let markdown = "# Benchmarks\n\n> This benchmark is using different content (salted) in every iterations.\n\n";
 
