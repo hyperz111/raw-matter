@@ -29,7 +29,7 @@ Hello world`;
 const parsed = parse(input);
 console.log(parsed);
 // {
-//   matter: 'title: Hello\ndescription: greating',
+//   matter: '\ntitle: Hello\ndescription: greating',
 //   content: 'Hello world'
 // }
 

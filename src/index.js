@@ -33,7 +33,7 @@ const parse = (input, options = {}) => {
 			closeIndex = length;
 		}
 
-		file.matter = input.slice(0, closeIndex).trim();
+		file.matter = input.slice(0, closeIndex);
 
 		// update file.content
 		if (closeIndex === length) {
