@@ -27,7 +27,9 @@
 	],
 	"scripts": {
 		"bench": "node ./benchmark/index.js",
+		"check": "prettier --check .",
 		"format": "prettier --write .",
+		"prepare": "kagitin",
 		"test": "node --test"
 	},
 	"devDependencies": {
@@ -35,8 +37,12 @@
 		"front-matter": "^4.0.2",
 		"gray-matter": "^4.0.3",
 		"js-yaml": "^3",
+		"kagitin": "^0.2.1",
 		"prettier": "^3.8.3",
 		"tinybench": "^6.0.2"
 	},
-	"packageManager": "pnpm@10.15.0"
+	"packageManager": "pnpm@10.15.0",
+	"kagitin": {
+		"pre-commit": "pnpm run check"
+	}
 }

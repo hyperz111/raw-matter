@@ -20,6 +20,9 @@ importers:
       js-yaml:
         specifier: ^3
         version: 3.14.2
+      kagitin:
+        specifier: ^0.2.1
+        version: 0.2.1
       prettier:
         specifier: ^3.8.3
         version: 3.8.3
@@ -144,6 +147,10 @@ packages:
 
   js-yaml@3.14.2:
     resolution: {integrity: sha512-PMSmkqxr106Xa156c2M265Z+FTrPl+oxd/rgOQy2tijQeK5TxQ43psO1ZCwhVOSdnn+RzkzlRz/eY4BgJBYVpg==}
+    hasBin: true
+
+  kagitin@0.2.1:
+    resolution: {integrity: sha512-o1tFexGVzwnQ2LDRUOVjP/MRj9sct8IvltoRIlOO13qn8XJFmdQjshHAp/8LqK2D6yBoPEMcCQ+DUp8mwUkcRA==}
     hasBin: true
 
   kind-of@6.0.3:
@@ -314,6 +321,8 @@ snapshots:
     dependencies:
       argparse: 1.0.10
       esprima: 4.0.1
+
+  kagitin@0.2.1: {}
 
   kind-of@6.0.3: {}
 
