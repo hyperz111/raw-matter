@@ -44,7 +44,7 @@ console.log(data);
 
 Parse the string that contains front-matter and return the parsed object.
 
-### `ParseOptions` <sup>type</sup>
+### `ParseOptions` <sup>interface</sup>
 
 ```ts
 interface ParseOptions {
@@ -64,7 +64,7 @@ interface ParseOptions {
 }
 ```
 
-### `ParseResult` <sup>type</sup>
+### `ParseResult` <sup>interface</sup>
 
 ```ts
 interface ParseResult {
