@@ -46,17 +46,17 @@ Parse the string that contains front-matter and return the parsed object.
 
 Parameters:
 
-- `input` **{String}**: Input string.
-- `[options]` **{Object}**: Parser options.
-  - `[delimiter]` **{String}**: Front-matter delimiter.
-  - `[excerpt]` **{Boolean|String|Function}**: Include excerpt or not?
+- `input` **{string}**: Input string.
+- `[options]` **{object}**: Parser options.
+- `[options.delimiter]` **{string}**: Front-matter delimiter.
+- `[options.excerpt]` **{boolean|string|function}**: Include excerpt or not?
 
-Returns: **{Object}**
+Returns: **{object}**
 
-- `matter` **{String}**: Front-matter block string, You can parse this.
-- `content` **{String}**: Input content under the front-matter.
-- `original` **{String}**: Original input string.
-- `[excerpt]` **{String}**: Excerpt string.
+- `matter` **{string}**: Front-matter block string, You can parse this.
+- `content` **{string}**: Input content under the front-matter.
+- `original` **{string}**: Original input string.
+- `[excerpt]` **{string}**: Excerpt string.
 
 ## License
 
