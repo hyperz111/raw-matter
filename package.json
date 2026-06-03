@@ -1,12 +1,29 @@
 {
 	"name": "raw-matter",
 	"version": "0.0.0",
-	"description": "",
-	"keywords": [],
+	"description": "Low-level front-matter extractor",
+	"keywords": [
+		"low-level",
+		"front-matter",
+		"frontmatter",
+		"parse",
+		"parser",
+		"extract",
+		"extractor"
+	],
+	"repository": "hyperz111/raw-matter",
 	"license": "MIT",
-	"author": "",
+	"author": "Hyper-Z11",
 	"type": "module",
-	"main": "index.js",
+	"exports": {
+		".": {
+			"types": "./src/index.d.ts",
+			"default": "./src/index.js"
+		}
+	},
+	"files": [
+		"src"
+	],
 	"scripts": {
 		"bench": "node ./benchmark/index.js",
 		"format": "prettier --write .",
