@@ -8,10 +8,6 @@ export interface ParseResult {
 	 */
 	content: string;
 	/**
-	 * Original input string.
-	 */
-	original: string;
-	/**
 	 * Excerpt string.
 	 */
 	excerpt?: string;

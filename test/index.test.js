@@ -17,7 +17,6 @@ describe("raw-matter", () => {
 				assert.deepEqual(parse(input), {
 					matter: createString(["title: Hello", "description: for you"]),
 					content: createString(["Hello world"]),
-					original: input,
 				});
 			});
 
@@ -27,7 +26,6 @@ describe("raw-matter", () => {
 				assert.deepEqual(parse(input), {
 					matter: createString([]),
 					content: createString(["Hello world"]),
-					original: input,
 				});
 			});
 
@@ -37,7 +35,6 @@ describe("raw-matter", () => {
 				assert.deepEqual(parse(input), {
 					matter: createString(["title: Hello", "description: for you"]),
 					content: createString([]),
-					original: input,
 				});
 			});
 
@@ -47,7 +44,6 @@ describe("raw-matter", () => {
 				assert.deepEqual(parse(input, { delimiter: "+++" }), {
 					matter: createString(["title: Hello", "description: for you"]),
 					content: createString(["Hello world"]),
-					original: input,
 				});
 			});
 
@@ -67,7 +63,6 @@ describe("raw-matter", () => {
 						matter: createString(["title: Hello", "description: for you"]),
 						content: createString(["My world", "---", "Hello world"]),
 						excerpt: createString(["My world", ""]),
-						original: input,
 					});
 				});
 
@@ -86,7 +81,6 @@ describe("raw-matter", () => {
 						matter: createString(["title: Hello", "description: for you"]),
 						content: createString(["My world", "+++", "Hello world"]),
 						excerpt: createString(["My world", ""]),
-						original: input,
 					});
 				});
 
@@ -114,7 +108,6 @@ describe("raw-matter", () => {
 							matter: createString(["title: Hello", "description: for you"]),
 							content: createString(["Hello world"]),
 							excerpt: createString(["My world", ""]),
-							original: input,
 						},
 					);
 				});

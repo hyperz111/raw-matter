@@ -30,8 +30,7 @@ const parsed = parse(input);
 console.log(parsed);
 // {
 //   matter: 'title: Hello\ndescription: greating',
-//   content: 'Hello world',
-//   original: '---\ntitle: Hello\ndescription: greating\n---\nHello world'
+//   content: 'Hello world'
 // }
 
 // Now you can parse the front-matter
@@ -57,7 +56,6 @@ Returns: **{object}**
 
 - `matter` **{string}**: Front-matter block string, You can parse this.
 - `content` **{string}**: Input content under the front-matter.
-- `original` **{string}**: Original input string.
 - `[excerpt]` **{string}**: Excerpt string.
 
 ## Benchmark

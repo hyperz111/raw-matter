@@ -3,7 +3,6 @@ const parse = (input, options = {}) => {
 	const file = {
 		matter: "",
 		content: input,
-		original: input,
 	};
 
 	// Blank file
