@@ -35,9 +35,9 @@ export interface ParseOptions {
 
 /**
  * Parse the string that contains front-matter and return the parsed object.
- * @param {string} input input string
- * @param {Partial<ParseOptions>} [options] parse options
- * @return {ParseResult} result object
+ * @param {string} input Input string
+ * @param {Partial<ParseOptions>} [options] Parser options
+ * @return {ParseResult} Result object
  */
 declare const parse: (input: string, options?: Partial<ParseOptions>) => ParseResult;
 
