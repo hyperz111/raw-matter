@@ -1,3 +1,4 @@
+// Borrowed from https://github.com/jonschlinkert/gray-
 const parse = (input, options = {}) => {
 	const file = {
 		matter: "",
