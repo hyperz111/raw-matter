@@ -1,25 +1,20 @@
-// Borrowed from https://github.com/jonschlinkert/gray-matter
+// From https://github.com/jonschlinkert/gray-matter
+
 export const parse = (input, options = {}) => {
 	const file = {
 		matter: "",
 		content: input,
 	};
 
-	// Blank file
 	if (input === "") {
 		return file;
 	}
 
 	const open = options.delimiter || "---";
-	const close = `\n${open}`;
 
 	if (input.startsWith(open)) {
-		// get the length of the opening delimiter
 		const openLength = open.length;
 
-		// if the next character after the opening delimiter is
-		// a character from the delimiter, then it's not a front-
-		// matter delimiter
 		if (input[openLength] === open[openLength - 1]) {
 			return file;
 		}
@@ -27,19 +22,18 @@ export const parse = (input, options = {}) => {
 		input = input.slice(openLength);
 		const length = input.length;
 
-		// get the index of the closing delimiter
-		let closeIndex = input.indexOf(close);
+		let closeIndex = input.indexOf(`\n${open}`);
 		if (closeIndex === -1) {
 			closeIndex = length;
 		}
 
 		file.matter = input.slice(0, closeIndex);
 
-		// update file.content
 		if (closeIndex === length) {
 			file.content = "";
 		} else {
-			file.content = input.slice(closeIndex + close.length);
+			file.content = input.slice(closeIndex + openLength + 1);
+
 			if (file.content[0] === "\r") {
 				file.content = file.content.slice(1);
 			}
@@ -54,7 +48,6 @@ export const parse = (input, options = {}) => {
 	} else if (options.excerpt) {
 		const delimiter = typeof options.excerpt === "string" ? options.excerpt : open;
 
-		// if enabled, get the excerpt defined after front-matter
 		const index = file.content.indexOf(delimiter);
 		if (index !== -1) {
 			file.excerpt = file.content.slice(0, index);
