@@ -16,6 +16,7 @@ npm install raw-matter
 
 ```js
 import { parse } from "raw-matter";
+// NOTE: this example is using js-yaml@3 (legacy)
 import yaml from "js-yaml";
 
 // Input string
