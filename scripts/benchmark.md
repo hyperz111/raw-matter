@@ -1,53 +1,51 @@
 # Benchmarks
 
-> This benchmark is using different content (salted) in every iterations.
-
 ## complex
 
 ```text
-front-matter × 4,600 ops/sec ±0.19% (4,549 runs sampled)
-gray-matter × 3,758 ops/sec ±0.30% (3,598 runs sampled)
-gray-matter+yaml_disabled × 11,322 ops/sec ±0.24% (10,770 runs sampled)
-raw-matter × 225,050 ops/sec ±0.04% (198,976 runs sampled)
-raw-matter+yaml × 6,628 ops/sec ±0.12% (6,570 runs sampled)
+front-matter × 4,940 ops/sec ±0.19% (4,887 runs sampled)
+gray-matter × 4,352 ops/sec ±0.28% (4,306 runs sampled)
+gray-matter+yaml_disabled × 24,760 ops/sec ±0.19% (23,952 runs sampled)
+raw-matter × 354,826 ops/sec ±0.02% (350,653 runs sampled)
+raw-matter+yaml × 6,553 ops/sec ±0.19% (6,480 runs sampled)
 ```
 
 ## empty
 
 ```text
-front-matter × 2,958,938 ops/sec ±0.03% (2,271,778 runs sampled)
-gray-matter × 138,152 ops/sec ±0.06% (116,479 runs sampled)
-gray-matter+yaml_disabled × 163,598 ops/sec ±0.05% (143,963 runs sampled)
-raw-matter × 8,089,924 ops/sec ±0.04% (5,802,304 runs sampled)
-raw-matter+yaml × 8,312,004 ops/sec ±0.04% (6,717,842 runs sampled)
+front-matter × 6,776,589 ops/sec ±0.06% (4,199,733 runs sampled)
+gray-matter × 8,812,474 ops/sec ±0.03% (9,494,383 runs sampled)
+gray-matter+yaml_disabled × 8,543,565 ops/sec ±0.03% (8,791,902 runs sampled)
+raw-matter × 9,246,493 ops/sec ±0.02% (10,305,140 runs sampled)
+raw-matter+yaml × 9,961,819 ops/sec ±0.02% (11,541,960 runs sampled)
 ```
 
 ## matter
 
 ```text
-front-matter × 105,242 ops/sec ±0.03% (102,988 runs sampled)
-gray-matter × 45,654 ops/sec ±0.10% (39,938 runs sampled)
-gray-matter+yaml_disabled × 79,246 ops/sec ±0.08% (71,856 runs sampled)
-raw-matter × 1,502,210 ops/sec ±0.02% (1,363,020 runs sampled)
-raw-matter+yaml × 150,535 ops/sec ±0.03% (123,392 runs sampled)
+front-matter × 117,709 ops/sec ±0.03% (116,018 runs sampled)
+gray-matter × 64,424 ops/sec ±0.08% (61,760 runs sampled)
+gray-matter+yaml_disabled × 137,070 ops/sec ±0.06% (130,697 runs sampled)
+raw-matter × 3,274,227 ops/sec ±0.03% (2,890,570 runs sampled)
+raw-matter+yaml × 157,617 ops/sec ±0.03% (134,988 runs sampled)
 ```
 
 ## no-content
 
 ```text
-front-matter × 107,195 ops/sec ±0.03% (104,322 runs sampled)
-gray-matter × 45,737 ops/sec ±0.10% (39,760 runs sampled)
-gray-matter+yaml_disabled × 79,398 ops/sec ±0.08% (72,162 runs sampled)
-raw-matter × 1,482,480 ops/sec ±0.02% (1,435,746 runs sampled)
-raw-matter+yaml × 149,733 ops/sec ±0.03% (144,837 runs sampled)
+front-matter × 122,155 ops/sec ±0.03% (120,853 runs sampled)
+gray-matter × 63,042 ops/sec ±0.08% (60,623 runs sampled)
+gray-matter+yaml_disabled × 138,183 ops/sec ±0.06% (131,324 runs sampled)
+raw-matter × 4,540,353 ops/sec ±0.07% (3,398,716 runs sampled)
+raw-matter+yaml × 155,285 ops/sec ±0.03% (136,292 runs sampled)
 ```
 
 ## no-matter
 
 ```text
-front-matter × 1,205,152 ops/sec ±0.03% (1,162,111 runs sampled)
-gray-matter × 101,577 ops/sec ±0.07% (85,882 runs sampled)
-gray-matter+yaml_disabled × 99,288 ops/sec ±0.15% (52,045 runs sampled)
-raw-matter × 2,346,160 ops/sec ±0.04% (2,067,001 runs sampled)
-raw-matter+yaml × 2,490,301 ops/sec ±0.03% (2,285,589 runs sampled)
+front-matter × 3,294,754 ops/sec ±0.05% (2,806,056 runs sampled)
+gray-matter × 192,744 ops/sec ±0.04% (174,928 runs sampled)
+gray-matter+yaml_disabled × 186,564 ops/sec ±0.04% (179,837 runs sampled)
+raw-matter × 8,922,726 ops/sec ±0.02% (9,638,541 runs sampled)
+raw-matter+yaml × 9,703,960 ops/sec ±0.02% (11,134,354 runs sampled)
 ```

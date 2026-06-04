@@ -4,7 +4,7 @@ import * as path from "node:path";
 import { format } from "prettier";
 import prettierConfig from "../prettier.config.js";
 import { Bench } from "tinybench";
-import YAML from "js-yaml";
+import yaml from "js-yaml";
 
 import front from "front-matter";
 import gray from "gray-matter";
@@ -14,8 +14,9 @@ const fixturesPath = path.resolve(import.meta.dirname, "fixtures");
 const fixtures = fs.readdirSync(fixturesPath);
 const results = [];
 const libraries = [
-	["front-matter", front],
-	["gray-matter", gray],
+	["front-matter", (input) => front(input, {})],
+	// Disable gray-matter internal cache
+	["gray-matter", (input) => gray(input, {})],
 	[
 		"gray-matter+yaml_disabled",
 		(input) =>
@@ -34,14 +35,12 @@ const libraries = [
 		(input) => {
 			const result = raw(input);
 			if (result.matter !== "") {
-				result.data = YAML.safeLoad(result.matter);
+				result.data = yaml.safeLoad(result.matter);
 			}
 			return result;
 		},
 	],
 ];
-
-let salt = 0;
 
 for (const fixture of fixtures) {
 	const start = Date.now();
@@ -50,10 +49,10 @@ for (const fixture of fixtures) {
 	console.log(`[${name}]`, "Preparing...");
 
 	const bench = new Bench({ name, throws: true });
-	const content = fs.readFileSync(path.join(fixturesPath, fixture), "utf8");
+	const content = fs.readFileSync(path.join(fixturesPath, fixture), "utf8").trim();
 
 	for (const [library, fn] of libraries) {
-		bench.add(library, () => fn(`${content}${salt++}`));
+		bench.add(library, () => fn(content));
 	}
 
 	console.log(`[${name}]`, "Benchmarking...");
@@ -73,7 +72,7 @@ for (const fixture of fixtures) {
 	});
 }
 
-let markdown = "# Benchmarks\n\n> This benchmark is using different content (salted) in every iterations.\n\n";
+let markdown = "# Benchmarks\n\n";
 
 for (const result of results) {
 	markdown += `## ${result.file}\n\n\`\`\`text\n`;
