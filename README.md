@@ -15,7 +15,7 @@ npm install raw-matter
 ## Usage
 
 ```js
-import parse from "raw-matter";
+import { parse } from "raw-matter";
 import yaml from "js-yaml";
 
 // Input string
@@ -60,7 +60,7 @@ Returns: **{object}**
 
 ## Benchmark
 
-See `benchmark/result.md` file in this repository.
+See `docs/benchmark.md` file in this repository.
 You can update it manually by running `pnpm run bench`.
 
 ## Credits

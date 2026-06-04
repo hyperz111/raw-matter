@@ -6,7 +6,7 @@ import YAML from "js-yaml";
 
 import front from "front-matter";
 import gray from "gray-matter";
-import raw from "../src/index.js";
+import { parse as raw } from "../src/index.js";
 
 const fixturesPath = path.resolve(import.meta.dirname, "fixtures");
 const fixtures = fs.readdirSync(fixturesPath);
@@ -76,4 +76,6 @@ for (const result of results) {
 	markdown += "```\n\n";
 }
 
-fs.writeFileSync(path.resolve(import.meta.dirname, "result.md"), markdown);
+const destination = path.resolve(import.meta.dirname, "..", "docs", "benchmark.md");
+fs.writeFileSync(destination, markdown);
+console.log(`Saved to ${destination}!`);

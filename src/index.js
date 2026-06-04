@@ -1,5 +1,5 @@
 // Borrowed from https://github.com/jonschlinkert/gray-matter
-const parse = (input, options = {}) => {
+export const parse = (input, options = {}) => {
 	const file = {
 		matter: "",
 		content: input,
@@ -63,5 +63,3 @@ const parse = (input, options = {}) => {
 
 	return file;
 };
-
-export default parse;

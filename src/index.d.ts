@@ -35,6 +35,4 @@ export interface ParseOptions {
  * @param {Partial<ParseOptions>} [options] Parser options
  * @return {ParseResult} Result object
  */
-declare const parse: (input: string, options?: Partial<ParseOptions>) => ParseResult;
-
-export default parse;
+export declare const parse: (input: string, options?: Partial<ParseOptions>) => ParseResult;
